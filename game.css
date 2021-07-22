@@ -1,0 +1,40 @@
+html {
+    background-color: black;
+}
+
+hr {
+    border-left:10px dashed white;
+    border-right: black;
+    border-top: black;
+    border-bottom: black;
+    background-color:black;
+    height: 98vh;
+    width: 1px;
+    position: absolute;
+    left: 50vw;
+    bottom: 0.25vh;
+}
+
+.humanPlayer {
+    position: absolute;
+    width: 1vw;
+    height: 10vh;
+    background-color: white;
+}
+
+#computerPlayer {
+    position: absolute;
+    width: 1vw;
+    height: 10vh;
+    background-color: white;
+    left: 98.5vw;
+}
+
+#ball {
+    height: 3vh;
+    width: 3vh;
+    position: absolute;
+    background-color: white;
+    top: 49.5vh;
+    left: 49.5vw;
+}
