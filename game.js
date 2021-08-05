@@ -10,6 +10,11 @@ document.addEventListener("DOMContentLoaded", function() { console.log("content 
     layout(document.getElementById("ball"), 49.5, 49.5, 3, 3)
 });
 
+window.addEventListener( "resize", function() {
+    layout(computerPlayer, 45, 98.5);
+    layout(document.getElementById("ball"), 49.5,49.5,3,3,500);
+});
+
 document.addEventListener('keydown', function() {
     if(event.keyCode == 38) {
         // controls up
@@ -58,7 +63,14 @@ function layout(element, topval, leftval, height, width) {
     element.style.left = widPerc*leftval+"px";
     element.style.width = verPerc*width+"px";
     element.style.height = verPerc*height+"px";
-    setInterval(function() {if(!moving) {layout(humanPlayer, 45, 0.5);
-        layout(computerPlayer, 45, 98.5);
-        layout(document.getElementById("ball"), 49.5,49.5,3,3);}},1500);
+    
+}
+
+function getPositionRelative(element, dir) {
+    var h = window.innerHeight/100;
+    console.log(h);
+    var elementStyle = window.getComputedStyle(element);
+    var elementHeightCurr = Number(elementStyle.getPropertyValue(dir).replace("px",""))/50;
+    var posRel = h/elementHeightCurr;
+    return posRel;
 }
